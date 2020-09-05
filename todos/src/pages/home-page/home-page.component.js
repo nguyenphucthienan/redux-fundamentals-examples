@@ -5,7 +5,7 @@ import { Row, Col } from 'react-materialize';
 import TodoInput from '../../components/todo-input/todo-input.component';
 import TodoList from '../../components/todo-list/todo-list.component';
 
-import { generateRandomId } from '../../components/utils/todo.utils';
+import { generateRandomId } from '../../utils/todo.utils';
 import { addTodo } from '../../redux/todo/todo.actions';
 
 class HomePage extends Component {

@@ -1,0 +1,22 @@
+.todo-item {
+  .text {
+    cursor: pointer;
+  }
+
+  .done-text {
+    font-style: italic;
+    text-decoration: line-through;
+  }
+
+  .remove-button {
+    display: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .remove-button {
+      display: block;
+    }
+  }
+}

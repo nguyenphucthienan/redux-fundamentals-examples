@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, Icon } from 'react-materialize';
+import { CardPanel, TextInput, Icon } from 'react-materialize';
 
 import './todo-input.styles.scss';
 
@@ -33,12 +33,14 @@ class TodoInput extends Component {
     const { text } = this.state;
     return (
       <form className='input-form' onSubmit={this.handleFormSubmit}>
-        <TextInput
-          icon={<Icon>event_note</Icon>}
-          label='Add a task'
-          value={text}
-          onChange={this.handleTextChange}
-        />
+        <CardPanel className='z-depth-1'>
+          <TextInput
+            icon={<Icon>event_note</Icon>}
+            label='Add a task'
+            value={text}
+            onChange={this.handleTextChange}
+          />
+        </CardPanel>
       </form>
     );
   }
