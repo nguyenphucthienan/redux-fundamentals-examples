@@ -12,22 +12,27 @@ class TodoInput extends Component {
     };
 
     this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleTextChange(event) {
     this.setState({ text: event.target.value });
   }
 
-  handleSubmit(event) {
+  handleFormSubmit(event) {
     event.preventDefault();
+
+    const { text } = this.state;
+    const { onSubmit } = this.props;
+
+    onSubmit(text);
     this.setState({ text: '' });
   }
 
   render() {
     const { text } = this.state;
     return (
-      <form className='input-form' onSubmit={this.handleSubmit}>
+      <form className='input-form' onSubmit={this.handleFormSubmit}>
         <TextInput
           icon={<Icon>event_note</Icon>}
           label='Add a task'
