@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-materialize';
 
+import './home-page.styles.scss';
+
 import TodoInput from '../../components/todo-input/todo-input.component';
 import TodoList from '../../components/todo-list/todo-list.component';
 
@@ -28,8 +30,7 @@ class HomePage extends Component {
   render() {
     const { todos } = this.props;
     return (
-      <div>
-        <h2 className='center'>Todos</h2>
+      <div className='home-page'>
         <Row>
           <Col l={8} m={10} s={12} offset='l2 m1'>
             <TodoInput onSubmit={this.handleSubmit} />

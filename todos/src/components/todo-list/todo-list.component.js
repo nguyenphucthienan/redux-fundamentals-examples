@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Collection, CollectionItem } from 'react-materialize';
+
 import TodoItem from '../todo-item/todo-item.component';
 
 class TodoList extends Component {
