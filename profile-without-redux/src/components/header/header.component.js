@@ -5,6 +5,7 @@ import './component.styles.scss';
 
 class Header extends Component {
   render() {
+    const { user } = this.props;
     return (
       <Navbar
         alignLinks='right'
@@ -26,7 +27,7 @@ class Header extends Component {
           }}
           trigger={
             <a href='#!'>
-              Hi anptnguyen! <Icon right>arrow_drop_down</Icon>
+              Hi {user.username}!<Icon right>arrow_drop_down</Icon>
             </a>
           }
         >

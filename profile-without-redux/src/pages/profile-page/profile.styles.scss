@@ -1,0 +1,27 @@
+.profile-page {
+  margin-top: 20px;
+
+  .username {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .user-info-container {
+    font-size: 1.25rem;
+    margin-top: 10px;
+
+    .user-info {
+      margin-bottom: 4px;
+
+      .title {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .action-button {
+    color: #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}
