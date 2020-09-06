@@ -1,41 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Card } from 'react-materialize';
+import { getPostsStart } from '../../redux/post/post.actions';
 
 class PostSection extends Component {
+  componentDidMount() {
+    const { getPostsStart } = this.props;
+    getPostsStart();
+  }
+
   render() {
+    const { posts } = this.props;
     return (
       <div className='post-section'>
-        <Card title='Post #1'>
-          <span>
-            Nullam pharetra volutpat elementum. Donec efficitur libero eget leo
-            fermentum rhoncus. Suspendisse vitae eleifend elit. Curabitur mollis
-            fermentum vulputate. Lorem.
-          </span>
-        </Card>
-        <Card title='Post #2'>
-          <span>
-            Maecenas vel aliquet orci, ac aliquam tellus. Nullam ut tempor
-            justo. Vestibulum viverra bibendum eros ac eleifend. Curabitur et
-            ante.
-          </span>
-        </Card>
-        <Card title='Post #3'>
-          <span>
-            Maecenas consequat massa in enim mollis finibus. Praesent vitae
-            justo tortor. Vestibulum sagittis magna eget bibendum aliquet. Donec
-            volutpat eu.
-          </span>
-        </Card>
-        <Card title='Post #4'>
-          <span>
-            Nam vel turpis malesuada, facilisis risus vestibulum, elementum
-            justo. Etiam iaculis eu eros volutpat posuere. Morbi sollicitudin
-            tellus ante, pharetra.
-          </span>
-        </Card>
+        {posts.map(post => (
+          <Card key={post.id} title={post.title}>
+            <span>{post.content}</span>
+          </Card>
+        ))}
       </div>
     );
   }
 }
 
-export default PostSection;
+const mapStateToProps = state => ({
+  posts: state.posts.posts
+});
+
+const mapDispatchToProps = dispatch => ({
+  getPostsStart: () => dispatch(getPostsStart())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostSection);
