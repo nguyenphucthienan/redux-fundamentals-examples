@@ -8,12 +8,11 @@ import PostSection from '../../components/post-section/post-section.component';
 
 class ProfilePage extends Component {
   render() {
-    const { user } = this.props;
     return (
       <div className='profile-page'>
         <Row>
           <Col l={4} m={6} s={12}>
-            <UserSection user={user} />
+            <UserSection />
           </Col>
           <Col l={8} m={6} s={12}>
             <PostSection />
