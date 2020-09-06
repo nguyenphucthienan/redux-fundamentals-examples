@@ -43,7 +43,7 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = state => ({
-  todos: state.todo.todos
+  todos: state.todos
 });
 
 const mapDispatchToProps = dispatch => ({
