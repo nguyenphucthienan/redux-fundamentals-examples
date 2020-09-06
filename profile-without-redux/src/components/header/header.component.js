@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem, Dropdown, Divider, Icon } from 'react-materialize';
 
-import './component.styles.scss';
+import './header.styles.scss';
 
 class Header extends Component {
   render() {
