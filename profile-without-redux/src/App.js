@@ -5,6 +5,8 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 
 import './App.scss';
 
+import Header from './components/header/header.component';
+
 class App extends Component {
   componentDidMount() {
     M.AutoInit();
@@ -13,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <h1>Redux</h1>
+        <Header />
       </div>
     );
   }
